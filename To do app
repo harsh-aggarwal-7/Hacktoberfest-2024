@@ -1,0 +1,20 @@
+class TodoApp:
+    def __init__(self):
+        self.tasks = []
+
+    def add_task(self, task):
+        self.tasks.append({'task': task, 'completed': False})
+        print(f"Added task: {task}")
+
+    def view_tasks(self):
+        if not self.tasks:
+            print("No tasks available.")
+        else:
+            for idx, task in enumerate(self.tasks, 1):
+                print(f"{idx}. {task['task']} - {'Completed' if task['completed'] else 'Incomplete'}")
+
+if __name__ == "__main__":
+    app = TodoApp()
+    app.add_task("Learn Python")
+    app.add_task("Contribute to Hacktoberfest")
+    app.view_tasks()
